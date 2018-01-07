@@ -3,9 +3,12 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const exphbs = require("express-handlebars");
 
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_Controller.js");
+
 // Create an instance of the express app.
 const app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({
@@ -26,6 +29,8 @@ app.use(bodyParser.json({
 
 // Static directory
 app.use(express.static("public"));
+
+app.use("/", routes);
 
 // Starting our Express app
 // =============================================================

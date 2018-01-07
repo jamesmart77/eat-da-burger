@@ -1,12 +1,62 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <h1 class="display-3">Eat-Da-Burger</h1>
+      <p class="lead">This is a simple, full stack restaurant app. Add the burgers you wanna eat and then proceed to devour like the hungry
+        burger-vour you are!</p>
+    </div>
 
-<h2>Add a Cat</h2>
-<form class="create-form">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-header">
+          Uneaten Burgers
+        </div>
+      </div>
+      <div class="card-block">
+        <ul>
+          {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devour=true}} {{/unless}} {{/each}}
+        </ul>
+      </div>
+      {{!--
+      <h2>Cats that are sleepy!</h2>
 
-  <div class="form-group">
-    <label for="burgerName">Burger Name</label>
-    <input type="text" id="burgerName" name="name">
+      <ul>
+        {{#each cats}} {{#if sleepy}} {{> cats/cat-block sleep=false}} {{/if}} {{/each}}
+      </ul> --}}
+    </div>
+
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-header">
+          Devoured Burgers
+        </div>
+      </div>
+      <div class="card-block">
+        <ul>
+          {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devour=false}} {{/if}} {{/each}}
+        </ul>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Add a Burger
+        </div>
+      </div>
+      <div class="card-block">
 
-  <button type="submit">Add Cat</button>
-</form>
+        <form class="create-form">
+
+          <div class="form-group has-success">
+            <label class="form-control-label" for="burgerName">Burger Name</label>
+            <input class="form-control form-control-success" type="text" id="burgerName" name="name" required>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
