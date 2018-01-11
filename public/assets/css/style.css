@@ -1,9 +1,19 @@
+body {
+    background-color: #faeabf;
+}
 .container{
     max-width: 900px;
 }
 
+.card-block {
+    background: #d4e0ea;
+    background: #d4e0ea;
+    margin-bottom: 20px;
+}
+
 .jumbotron{
     margin-top: 15px;
+    border: #b0b1b2 solid;
 }
 
 .card-header{
@@ -13,4 +23,7 @@
 
 .burger-item{
     padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
