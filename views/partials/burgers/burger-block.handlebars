@@ -2,8 +2,10 @@
 	<div class="burger-item">
 		{{burger_name}}
 
-		<button class="btn btn-warning change-devour float-right" data-id="{{id}}" data-newdevour="{{devour}}">
-			{{#if devour}}DEVOUR{{/if}}
-		</button>
+		{{#if devour}}
+		<button class="btn btn-warning change-devour float-right" data-id="{{id}}" data-newdevour="{{devour}}">DEVOUR</button>
+		{{else}}
+		<button class="btn btn-danger delete-devour float-right" data-id="{{id}}" data-newdevour="{{devour}}">X</button>
+		{{/if}}
 	</div>
 </li>
